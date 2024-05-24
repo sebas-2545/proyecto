@@ -45,7 +45,7 @@
 			<!-- Encabezado lado derecho-->
 				<div class="navbar-buttons navbar-header pull-right" role="navigation">
 					<ul class="nav ace-nav">
-						<a href="#">
+						<a href="loginphp/loginAprendiz.php">
 						<button type="button" class="pull-right btn btn-success">
 							<i class="ace-icon fa fa-sign-in white bigger-110"></i>
 							<span class="bigger-110 white">INICIAR SESION </span>
