@@ -1,0 +1,111 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 21-05-2024 a las 19:42:06
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `nextjsdb`
+--
+CREATE DATABASE IF NOT EXISTS `nextjsdb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `nextjsdb`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id`, `nombre`) VALUES
+(1, 'Administrador'),
+(2, 'Coordinador'),
+(3, 'Instructor'),
+(4, 'Lector');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `idusuarios` int(11) NOT NULL,
+  `Nombre` varchar(70) NOT NULL,
+  `Correo` varchar(30) NOT NULL,
+  `Usuario` varchar(20) NOT NULL,
+  `Password` varchar(60) NOT NULL,
+  `Celular` varchar(20) NOT NULL,
+  `Profesion` varchar(50) NOT NULL,
+  `FechaNacimiento` date NOT NULL,
+  `CorreoAlt` varchar(50) NOT NULL,
+  `FechaReg` date NOT NULL DEFAULT current_timestamp(),
+  `rol_id` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`idusuarios`, `Nombre`, `Correo`, `Usuario`, `Password`, `Celular`, `Profesion`, `FechaNacimiento`, `CorreoAlt`, `FechaReg`, `rol_id`) VALUES
+(16, 'Carlo Magno', 'seis@hotmail.co', '6', 'ba1579348513d4f36f5e326d60efb9f4b6bde1df', '3165544545', 'sistemas2', '1900-05-02', 'alterno@hotmail.com', '2024-04-08', '1'),
+(17, 'diego narvaez', 'unos@dles.com', '1234', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '31111111112', '', '1900-05-07', 'prueba@tres.com', '2024-04-08', '2'),
+(18, 'ocho', 'uno@dos.com', '12345', '8cb2237d0679ca88db6464eac60da96345513964', '2147483647', '', '2007-01-07', '', '2024-04-08', '2'),
+(19, 'nueve', 'nueve@hot.com', '1104704867', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '2147483647', 'ing.sistemaas', '2024-04-18', 'uno@dos.com', '2024-04-08', '3'),
+(20, 'diez', 'diez@gid.com', '1203044567', '8cb2237d0679ca88db6464eac60da96345513964', '2147483647', '', '2024-04-18', '', '2024-04-08', '3'),
+(21, 'once', 'once@fho.com', '2121234564', '8cb2237d0679ca88db6464eac60da96345513964', '2147483647', '', '2024-04-25', '', '2024-04-08', '3'),
+(22, 'pepito', 'pepito@lindo.com', '000000', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2147483647', '', '2021-02-02', '', '2024-04-12', '3'),
+(23, 'champion', 'pepito@lindo.com', '00000', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2147483647', 'ing calsetose', '2021-02-02', '', '2024-04-12', '3'),
+(24, 'prueba', 'prueba@hot.com', '1234567', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2147483647', '', '0323-02-23', '', '2024-04-12', '3'),
+(25, 'carlo', 'carlo@hot.com', '9876', '75d4c9b02467d96bc2ea6d655eb983d5a7a97a9b', '2147483647', '', '1983-07-18', '', '2024-04-18', '3'),
+(26, 'lindo el ', 'casetose@ho.com', '123', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2147483647', '', '2000-05-02', '', '2024-04-19', '4'),
+(27, 'Miguel Alejandro Carrasquilla Lopez', 'miguelcarrasquilla@sena.edu.co', '123123', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2147483647', 'chismoso', '1980-12-06', '', '2024-04-19', '4'),
+(28, 'pepito', 'pepito@lindo.com', '00000', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2147483647', '', '2021-02-02', '', '2024-04-12', '4');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`idusuarios`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `idusuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+COMMIT;

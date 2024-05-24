@@ -1,0 +1,47 @@
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #3fc744;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.container > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.image a {
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+    .container{
+        width: 396px;
+        height: 414.547px;
+    }
+    body{
+        background-color: white;
+        height: 540px;
+    }
+}
